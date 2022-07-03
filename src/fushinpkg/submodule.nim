@@ -18,15 +18,14 @@ type
     tSecond
     tThird
     tOther
-
-type
   Ym = string
-
-type Item = tuple[situation: string, serif: string, location: string,
-      category: string, date: string]
-
-type
-  Items* = TableRef[submodule.Ym, seq[Item]]
+  FushinItem = tuple
+    situation: string
+    serif: string
+    location: string
+    category: string
+    date: string
+  FushinItems* = TableRef[submodule.Ym, seq[FushinItem]]
 
 proc getSource(url: string): XmlNode =
   return
@@ -56,9 +55,9 @@ const URL = "https://fushinsha-joho.co.jp/serif.cgi"
 
 
 proc getFushinSelifItems*(beginYear: int = 2017, endYear: int = int.high,
-    printProgress: bool = false): Items =
+    printProgress: bool = false): FushinItems =
   let
-    items: Items = newTable[YM, seq[Item]]()
+    items: FushinItems = newTable[YM, seq[FushinItem]]()
   for year in beginYear..endYear:
     for month in 1..12:
       let ym = fmt"{year}{month:02}".YM
@@ -70,7 +69,7 @@ proc getFushinSelifItems*(beginYear: int = 2017, endYear: int = int.high,
       if html.checkResultExistence:
         return items
 
-      var currentItem: Item
+      var currentItem: FushinItem
       for idx, d in html.findAll("div"):
         case d.classifyNodes
         of tOther:

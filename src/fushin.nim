@@ -5,7 +5,7 @@ import csvtools
 
 proc main() =
   try:
-    let items: Items = getFushinSelifItems()
+    let items: FushinItems = getFushinSelifItems()
     for k, v in items.mpairs:
       let filename = fmt"{k}.csv"
       echo "writting: ", filename
