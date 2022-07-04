@@ -15,6 +15,7 @@ env:
   TWINE_USERNAME: __token__
   TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
   MAIN_MODULE: "src/fushin.nim"
+  SUB_MODULE: "src/fushinpkg/submodule.nim"
 
 jobs:
   pypi:
@@ -48,8 +49,10 @@ jobs:
           nimble -y install nimpy nimquery cligen
       - name: Compile
         run: |
-          nim c --app:lib --gc:arc --experimental:strictFuncs \
-                --out:${{ env.APP_NAME }}.so ${{ env.MAIN_MODULE }}
+          nim c --app:lib --gc:arc \
+                --out:${{ env.APP_NAME }}.so ${{ env.SUB_MODULE }}
+          # nim c --app:lib --gc:arc \
+          #       --experimental:strictFuncs --out:fushin.so ${{ env.MAIN_MODULE }}
       - name: Publish to PYPI
         run: |
           python3 setup.py --verbose sdist --formats=zip
