@@ -29,20 +29,13 @@ jobs:
           path: |
             ~/.choosenim
             ~/.nimble
-          key: nimcaches--${{ matrix.vm }}
+          key: nimcaches-${{ env.NIM_VERSION }}-${{ matrix.vm }}
       - uses: jiro4989/setup-nim-action@v1
         with:
           nim-version: ${{ env.NIM_VERSION }}
-      - uses: actions/setup-python@v4
-        with:
-          cache: pip
-          cache-dependency-path: setup.cfg
-          python-version: "3.10"
-      - name: Update Python PIP
-        run: pip install --upgrade --disable-pip-version-check pip setuptools twine
       - name: Nimble
         run: |
-          # nimble -y refresh
+          nimble -y refresh
           nimble -y install nimpy nimquery cligen
       - name: Compile
         run: |
@@ -50,6 +43,13 @@ jobs:
                 --out:${{ env.APP_NAME }}.so ${{ env.SUB_MODULE }}
           # nim c --app:lib --gc:arc \
           #       --experimental:strictFuncs --out:fushin.so ${{ env.MAIN_MODULE }}
+      - uses: actions/setup-python@v4
+        with:
+          cache: pip
+          cache-dependency-path: setup.cfg
+          python-version: "3.10"
+      - name: Update Pip
+        run: pip install --upgrade --disable-pip-version-check pip setuptools twine
       - name: Publish to PYPI
         run: |
           python setup.py --verbose sdist --formats=zip
