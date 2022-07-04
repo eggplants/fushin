@@ -42,7 +42,7 @@ jobs:
         run: pip install --upgrade --disable-pip-version-check pip setuptools twine
       - name: Nimble
         run: |
-          nimble -y refresh
+          # nimble -y refresh
           nimble -y install nimpy nimquery cligen
       - name: Compile
         run: |
@@ -52,7 +52,7 @@ jobs:
           #       --experimental:strictFuncs --out:fushin.so ${{ env.MAIN_MODULE }}
       - name: Publish to PYPI
         run: |
-          python3 setup.py --verbose sdist --formats=zip
+          python setup.py --verbose sdist --formats=zip
           rm --verbose --force --recursive *.so *.pyd *.egg-info/
           twine upload --verbose --disable-progress-bar dist/*.zip
   release:

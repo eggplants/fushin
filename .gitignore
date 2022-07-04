@@ -1,6 +1,9 @@
+*.so
+fushin
+
 nimcache/
 nimblecache/
 htmldocs/
-
-fushin
 csv/
+dist/
+*egg-info/
