@@ -13,4 +13,3 @@ bin           = @["fushin"]
 
 requires "nim >= 1.6.6"
 requires "nimquery >= 2.0.0"
-requires "csvtools >= 0.2.1"

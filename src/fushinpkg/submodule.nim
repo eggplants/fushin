@@ -55,7 +55,7 @@ const URL = "https://fushinsha-joho.co.jp/serif.cgi"
 
 
 proc getFushinSelifItems*(beginYear: int = 2017, endYear: int = int.high,
-    printProgress: bool = false): FushinItems =
+    printProgress: bool = true): FushinItems =
   let
     items: FushinItems = newTable[YM, seq[FushinItem]]()
   for year in beginYear..endYear:
@@ -68,7 +68,8 @@ proc getFushinSelifItems*(beginYear: int = 2017, endYear: int = int.high,
 
       if html.checkResultExistence:
         return items
-
+      items[ym] = @[]
+      echo "parsing..."
       var currentItem: FushinItem
       for idx, d in html.findAll("div"):
         case d.classifyNodes
@@ -89,6 +90,7 @@ proc getFushinSelifItems*(beginYear: int = 2017, endYear: int = int.high,
           currentItem.category = values[1]
           currentItem.date = values[2]
 
-        items[ym].add(currentItem)
-        sleep(1000)
+          items[ym].add(currentItem)
+      echo fmt"found: {len(items[ym])} items"
+      sleep(1000)
     return items
