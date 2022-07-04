@@ -9,11 +9,11 @@ env:
   APP_NAME: 'fushin'
   NIM_VERSION: '1.6.6'
   MAINTAINER: 'eggplants'
-  DESC: 'https://fushinsha-joho.co.jp/serif.cgi Downloader'
+  DESC: 'Fetch fushinsha serif data and save as csv files'
   CHOOSENIM_NO_ANALYTICS: 1
   TWINE_NON_INTERACTIVE: 1
   TWINE_USERNAME: __token__
-  TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+  TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
   MAIN_MODULE: "src/fushin.nim"
 
 jobs:

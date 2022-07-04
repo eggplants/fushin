@@ -61,15 +61,17 @@ proc getFushinSelifItems*(beginYear: int = 2017, endYear: int = int.high,
   for year in beginYear..endYear:
     for month in 1..12:
       let ym = fmt"{year}{month:02}".YM
-      if printProgress: echo fmt"{year}/{month}..."
+      if printProgress:
+        stdout.write fmt"{year}/{month}..."
+        stdout.flushFile()
       let
         html =
           fmt"{URL}?ym={ym}".getSource
 
       if html.checkResultExistence:
+        if printProgress: echo fmt"found: 0 items"
         return items
       items[ym] = @[]
-      if printProgress: echo "parsing..."
       var currentItem: FushinItem
       for idx, d in html.findAll("div"):
         case d.classifyNodes

@@ -21,10 +21,10 @@ proc escapeString(s: string): string =
   if ss.contains({',', '\r', '\n', '"'}): '"' & ss & '"'
   else: ss
 
-proc parser(beginYear: int = 2017, endYear: int, saveDir: string = "csv",
+proc fushin(beginYear: int = 2017, endYear: int, saveDir: string = "csv",
     printProgress: bool = true) =
   ## Fetch fushinsha serif data and save as csv files.
-  ## Source: https://fushinsha-joho.co.jp/serif.cgi
+  ## (Source: https://fushinsha-joho.co.jp/serif.cgi)
   try:
     let items: FushinItems = getFushinSelifItems(beginYear, endYear, printProgress)
     for k, v in items:
@@ -61,7 +61,7 @@ proc getVersion(): string =
 
 proc main() =
   ## Main.
-  dispatch(parser, help = Help, short = Short)
+  fushin.dispatch(help = Help, short = Short)
   clCfg.version = getVersion()
 
 when isMainModule:
