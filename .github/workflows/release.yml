@@ -40,9 +40,6 @@ jobs:
           python-version: "3.10"
       - name: Update Python PIP
         run: pip install --upgrade --disable-pip-version-check pip setuptools twine
-      - uses: jiro4989/setup-nim-action@v1
-        with:
-          nim-version: ${{ env.NIM_VERSION }}
       - name: Nimble
         run: |
           nimble -y refresh
