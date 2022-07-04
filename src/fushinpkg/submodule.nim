@@ -69,7 +69,7 @@ proc getFushinSelifItems*(beginYear: int = 2017, endYear: int = int.high,
       if html.checkResultExistence:
         return items
       items[ym] = @[]
-      echo "parsing..."
+      if printProgress: echo "parsing..."
       var currentItem: FushinItem
       for idx, d in html.findAll("div"):
         case d.classifyNodes
@@ -91,6 +91,6 @@ proc getFushinSelifItems*(beginYear: int = 2017, endYear: int = int.high,
           currentItem.date = values[2]
 
           items[ym].add(currentItem)
-      echo fmt"found: {len(items[ym])} items"
-      sleep(1000)
-    return items
+      if printProgress: echo fmt"found: {len(items[ym])} items"
+      sleep(5000)
+  return items
