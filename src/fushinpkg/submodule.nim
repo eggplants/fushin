@@ -13,11 +13,11 @@ import httpclient
 
 
 type
-  TargetNodes = enum
-    tFirst
-    tSecond
-    tThird
-    tOther
+  TargetNodes = enum  # classifiers for targetting node
+    tFirst  # Node for situation
+    tSecond  # Node for serif
+    tThird  # Node for location/category/date
+    tOther  # Others
   Ym = string
   FushinItem = tuple
     situation: string
@@ -56,6 +56,8 @@ const URL = "https://fushinsha-joho.co.jp/serif.cgi"
 
 proc getFushinSelifItems*(beginYear: int = 2017, endYear: int = int.high,
     printProgress: bool = true): FushinItems =
+  ## Get fushinsha serif data.
+  ## Returns data as item.
   let
     items: FushinItems = newTable[YM, seq[FushinItem]]()
   for year in beginYear..endYear:

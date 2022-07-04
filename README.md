@@ -1,5 +1,21 @@
 # fushin
 
+[![pre-commit.ci status](
+  https://results.pre-commit.ci/badge/github/eggplants/fushin/master.svg
+  )](
+  https://results.pre-commit.ci/latest/github/eggplants/fushin/master
+) [![release](
+  https://github.com/eggplants/fushin/actions/workflows/release.yml/badge.svg
+  )](
+  https://github.com/eggplants/fushin/actions/workflows/release.yml
+) [![GitHub release (latest SemVer)](
+  https://img.shields.io/github/v/release/eggplants/fushin?logo=github&sort=semver
+  )](
+  https://github.com/eggplants/fushin/releases
+)
+
+[![PyPI](https://img.shields.io/pypi/v/fushin?color=blue)](https://pypi.org/project/fushin)
+
 <https://fushinsha-joho.co.jp/serif.cgi> Downloader
 
 Fetch fushinsha serif data and save as csv files.
