@@ -13,18 +13,21 @@ import httpclient
 
 
 type
-  TargetNodes = enum  # classifiers for targetting node
-    tFirst  # Node for situation
-    tSecond  # Node for serif
-    tThird  # Node for location/category/date
-    tOther  # Others
-  Ym = string
-  FushinItem = tuple
-    situation: string
-    serif: string
-    location: string
-    category: string
-    date: string
+  TargetNodes = enum
+    ## classifiers for targetting node
+    tFirst  ## Node for situation
+    tSecond ## Node for serif
+    tThird  ## Node for location/category/date
+    tOther  ## Others
+  Ym* = string
+  ## Year & Month
+  FushinItem* = tuple
+    ## fushinsha information
+    situation: string ## Situation in which fushinsha occurred
+    serif: string ## Words uttered by fushinsha
+    location: string ## Places where fushinsha has issued
+    category: string ## Classification of fushinsha
+    date: string ## Date fushinsha occurred
   FushinItems* = TableRef[submodule.Ym, seq[FushinItem]]
 
 proc getSource(url: string): XmlNode =

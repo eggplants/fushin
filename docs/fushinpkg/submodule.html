@@ -101,8 +101,16 @@ window.addEventListener('DOMContentLoaded', main);
 <li>
   <a class="reference reference-toplevel" href="#7" id="57">Types</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#FushinItems"
+      <li><a class="reference" href="#FushinItem"
+    title="FushinItem = tuple[situation: string, ## Situation in which fushinsha occurred
+                   serif: string, ## Words uttered by fushinsha
+                   location: string, ## Places where fushinsha has issued
+                   category: string, ## Classification of fushinsha
+                   date: string]">FushinItem</a></li>
+  <li><a class="reference" href="#FushinItems"
     title="FushinItems = TableRef[Ym, seq[FushinItem]]">FushinItems</a></li>
+  <li><a class="reference" href="#Ym"
+    title="Ym = string">Ym</a></li>
 
   </ul>
 </li>
@@ -131,8 +139,28 @@ window.addEventListener('DOMContentLoaded', main);
   <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
 <dl class="item">
+<div id="FushinItem">
+<dt><pre><a href="submodule.html#FushinItem"><span class="Identifier">FushinItem</span></a> <span class="Other">=</span> <span class="Keyword">tuple</span><span class="Other">[</span><span class="Identifier">situation</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">,</span> <span class="Comment">## Situation in which fushinsha occurred</span>
+                   <span class="Identifier">serif</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">,</span> <span class="Comment">## Words uttered by fushinsha</span>
+                   <span class="Identifier">location</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">,</span> <span class="Comment">## Places where fushinsha has issued</span>
+                   <span class="Identifier">category</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">,</span> <span class="Comment">## Classification of fushinsha</span>
+                   <span class="Identifier">date</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">]</span></pre></dt>
+<dd>
+
+fushinsha information
+
+</dd>
+</div>
 <div id="FushinItems">
-<dt><pre><a href="submodule.html#FushinItems"><span class="Identifier">FushinItems</span></a> <span class="Other">=</span> <span class="Identifier">TableRef</span><span class="Other">[</span><span class="Identifier">Ym</span><span class="Other">,</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">FushinItem</span><span class="Other">]</span><span class="Other">]</span></pre></dt>
+<dt><pre><a href="submodule.html#FushinItems"><span class="Identifier">FushinItems</span></a> <span class="Other">=</span> <span class="Identifier">TableRef</span><span class="Other">[</span><a href="submodule.html#Ym"><span class="Identifier">Ym</span></a><span class="Other">,</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="submodule.html#FushinItem"><span class="Identifier">FushinItem</span></a><span class="Other">]</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+<div id="Ym">
+<dt><pre><a href="submodule.html#Ym"><span class="Identifier">Ym</span></a> <span class="Other">=</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 
 
@@ -167,7 +195,7 @@ Get fushinsha serif data. Returns data as item.
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2022-07-04 23:29:53 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2022-07-04 23:41:40 UTC</small>
       </div>
     </div>
   </div>

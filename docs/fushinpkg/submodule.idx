@@ -1,2 +1,4 @@
+Ym	fushinpkg/submodule.html#Ym	submodule: Ym	
+FushinItem	fushinpkg/submodule.html#FushinItem	submodule: FushinItem	
 FushinItems	fushinpkg/submodule.html#FushinItems	submodule: FushinItems	
 getFushinSelifItems	fushinpkg/submodule.html#getFushinSelifItems,int,int,bool	submodule: getFushinSelifItems(beginYear: int = 2017; endYear: int = int.high;\n                    printProgress: bool = true): FushinItems	
