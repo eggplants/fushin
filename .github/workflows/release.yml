@@ -52,7 +52,7 @@ jobs:
         run: pip install --upgrade --disable-pip-version-check pip setuptools twine
       - name: Publish to PYPI
         run: |
-          python setup.py --verbose sdist --formats=zip
+          python setup.py --verbose sdist
           rm --verbose --force --recursive *.so *.pyd *.egg-info/
           twine upload --verbose --disable-progress-bar dist/*.zip
   release:
