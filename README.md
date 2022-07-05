@@ -14,7 +14,11 @@
   https://github.com/eggplants/fushin/releases
 )
 
+<!--
+
 [![PyPI](https://img.shields.io/pypi/v/fushin?color=blue)](https://pypi.org/project/fushin)
+
+-->
 
 <https://fushinsha-joho.co.jp/serif.cgi> Downloader
 

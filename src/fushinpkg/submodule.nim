@@ -8,6 +8,7 @@ import std/strutils
 import std/tables
 import strformat
 
+# import nimpy
 import nimquery
 import httpclient
 

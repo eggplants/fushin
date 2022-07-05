@@ -11,9 +11,10 @@ bin = @["fushin"]
 
 # Dependencies
 
+requires "cligen >= 1.5.24"
 requires "nim >= 1.6.6"
 requires "nimquery >= 2.0.0"
-requires "cligen >= 1.5.24"
+# requires "nimpy >= 0.2.0"
 
 task docs, "Generate documents":
   exec "nimble doc --index:on --project src/*.nim -o:docs"
