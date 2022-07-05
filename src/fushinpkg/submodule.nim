@@ -22,13 +22,14 @@ type
   Ym* = string
   ## Year & Month
   FushinItem* = tuple
-    ## fushinsha information
+    ## An item of Fushinsha information
     situation: string ## Situation in which fushinsha occurred
     serif: string ## Words uttered by fushinsha
     location: string ## Places where fushinsha has issued
     category: string ## Classification of fushinsha
     date: string ## Date fushinsha occurred
   FushinItems* = TableRef[submodule.Ym, seq[FushinItem]]
+    ## An table of target year/month and fushinsha items
 
 proc getSource(url: string): XmlNode =
   return
