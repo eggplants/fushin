@@ -86,7 +86,7 @@ jobs:
           - name: windows
             vm: windows-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       - name: Cache Nim resources
         id: cache_nim
         uses: actions/cache@v2
