@@ -40,6 +40,12 @@ See: Releases
 
 -->
 
+### From Nim Packages
+
+```bash
+nimble install fushin
+```
+
 ### From GitHub
 
 ```bash
