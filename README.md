@@ -7,17 +7,17 @@
 </a>
 
 [![pre-commit.ci status](
-  https://results.pre-commit.ci/badge/github/eggplants/fushin/master.svg
+  <https://results.pre-commit.ci/badge/github/eggplants/fushin/master.svg>
   )](
-  https://results.pre-commit.ci/latest/github/eggplants/fushin/master
+  <https://results.pre-commit.ci/latest/github/eggplants/fushin/master>
 ) [![release](
-  https://github.com/eggplants/fushin/actions/workflows/release.yml/badge.svg
+  <https://github.com/eggplants/fushin/actions/workflows/release.yml/badge.svg>
   )](
-  https://github.com/eggplants/fushin/actions/workflows/release.yml
+  <https://github.com/eggplants/fushin/actions/workflows/release.yml>
 ) [![GitHub release (latest SemVer)](
-  https://img.shields.io/github/v/release/eggplants/fushin?logo=github&sort=semver
+  <https://img.shields.io/github/v/release/eggplants/fushin?logo=github&sort=semver>
   )](
-  https://github.com/eggplants/fushin/releases
+  <https://github.com/eggplants/fushin/releases>
 )
 
 <!--
