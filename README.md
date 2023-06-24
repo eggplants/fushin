@@ -1,9 +1,9 @@
 # fushin
 
-<a alt=nimble-directory href=https://nimble.directory/pkg/fushin>
-  <img height=20 src=https://raw.githubusercontent.com/yglukhov/nimble-tag/master/nimble.png />
-</a> <a alt=doc href=https://egpl.ga/fushin/fushin.html>
-  <img src=https://github.com/eggplants/fushin/actions/workflows/pages/pages-build-deployment/badge.svg />
+<a alt=nimble-directory href=<https://nimble.directory/pkg/fushin>>
+  <img height=20 src=<https://raw.githubusercontent.com/yglukhov/nimble-tag/master/nimble.png> />
+</a> <a alt=doc href=<https://egpl.ga/fushin/fushin.html>>
+  <img src=<https://github.com/eggplants/fushin/actions/workflows/pages/pages-build-deployment/badge.svg> />
 </a>
 
 [![pre-commit.ci status](
